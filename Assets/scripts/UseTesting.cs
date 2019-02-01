@@ -32,6 +32,7 @@ public class UseTesting : MonoBehaviour
 
         GameObject newMonster = Instantiate(monster, spawn.position, Quaternion.identity);
         newMonster.GetComponent<Display>().monster = monster3;
+        newMonster.name = monster3.MonName;
 
 
 
