@@ -22,28 +22,23 @@ public class Monster
     public Monster Parent1;
     public Monster Parent2;
 
-    public void GetMain(string monName, string type, int health, string color)
+    public Monster(string monName, string type, int health, string color, string ears, string earsColor, string tail, string tailColor, string tailDetail)
     {
         MonName = monName;
         Type = type;
         Health = health;
         Color = color;
-
-    }
-
-    public void GetParents(Monster parent1, Monster parent2)
-    {
-        Parent1 = parent1;
-        Parent2 = parent2;
-    }
-
-    public void GetAttributes(string ears, string earsColor, string tail, string tailColor, string tailDetail)
-    {
         Ears = ears;
         EarsColor = earsColor;
         Tail = tail;
         TailColor = tailColor;
         TailDetail = tailDetail;
+    }
+
+    public void SetParents(Monster parent1, Monster parent2)
+    {
+        Parent1 = parent1;
+        Parent2 = parent2;
     }
 
 }

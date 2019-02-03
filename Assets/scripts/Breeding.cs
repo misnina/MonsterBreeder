@@ -8,6 +8,8 @@ public class Breeding : MonoBehaviour
     public Monster breeding1;
     public Monster breeding2;
 
+    public Monster child;
+
     private void Start()
     {
         instance = this;
@@ -18,11 +20,9 @@ public class Breeding : MonoBehaviour
         breeding1 = parent1;
         breeding2 = parent2;
 
+        child.SetParents(breeding1, breeding2);
+        child = new Monster(monName, GetMonType(), GetHealth(), GetColor(), GetEars(), GetEarsColor(), GetTail(), GetTailColor(), GetTailDetail());
 
-        Monster child = new Monster();
-        child.GetParents(breeding1, breeding2);
-        child.GetMain(monName, GetMonType(), GetHealth(), GetColor());
-        child.GetAttributes(GetEars(), GetEarsColor(), GetTail(), GetTailColor(), GetTailDetail());
 
         return child;
     }

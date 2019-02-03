@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 1699963166}
   - component: {fileID: 1699963165}
   - component: {fileID: 1699963167}
+  - component: {fileID: 1699963168}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -632,3 +633,35 @@ MonoBehaviour:
   tailLongStripped: {fileID: 21300000, guid: 6e38bcf65c2f3cf41b0d1b57dfdcb861, type: 3}
   tailMediumStripped: {fileID: 21300002, guid: 6e38bcf65c2f3cf41b0d1b57dfdcb861, type: 3}
   tailShortStripped: {fileID: 21300004, guid: 6e38bcf65c2f3cf41b0d1b57dfdcb861, type: 3}
+--- !u!114 &1699963168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699963164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d2327b845820f46ab564041afb32b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golden:
+    MonName: Marco
+    Type: Circle
+    Health: 5
+    Color: Brown
+    Ears: Pointed
+    EarsColor: Brown
+    Tail: Short
+    TailColor: Brown
+    TailDetail: None
+  brown:
+    MonName: Marco
+    Type: Circle
+    Health: 5
+    Color: Brown
+    Ears: Pointed
+    EarsColor: Brown
+    Tail: Short
+    TailColor: Brown
+    TailDetail: None

@@ -14,13 +14,11 @@ public class Premade : MonoBehaviour
     {
         i = this;
 
-        golden.GetMain("Shiny", "Circle", 10, "Gold");
-        golden.GetAttributes("Folded", "Gold", "Long", "Gold", "Stripped");
-        golden.GetParents(golden, golden);
+        golden = new Monster("Shiny", "Circle", 10, "Gold", "Folded", "Gold", "Long", "Gold", "Stripped");
+        golden.SetParents(golden, golden);
 
-        brown.GetMain("Marco", "Square", 5, "Brown");
-        brown.GetAttributes("Pointed", "Brown", "Medium", "Brown", "None");
-        brown.GetParents(brown, brown);
+        brown = new Monster("Marco", "Square", 5, "Brown", "Pointed", "Brown", "Medium", "Brown", "None");
+        brown.SetParents(brown, brown);
 
 
     }
