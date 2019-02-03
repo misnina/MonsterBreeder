@@ -6,7 +6,7 @@ using UnityEngine;
 public class Monster
 {
     //Main
-    public string MonName = "Default";
+    public string MonName = "Marco";
     public string Type = "Circle";
     public int Health = 5;
     public string Color = "Brown";

@@ -566,6 +566,9 @@ MonoBehaviour:
     Color: 
     Ears: 
     EarsColor: Brown
+    Tail: Short
+    TailColor: Brown
+    TailDetail: None
   breeding2:
     MonName: 
     Type: 
@@ -573,6 +576,9 @@ MonoBehaviour:
     Color: 
     Ears: 
     EarsColor: Brown
+    Tail: Short
+    TailColor: Brown
+    TailDetail: None
 --- !u!4 &1699963166
 Transform:
   m_ObjectHideFlags: 0
@@ -602,8 +608,27 @@ MonoBehaviour:
   circle: {fileID: 998562396063091762, guid: cd5a75bb4ca46f24e875af6deff3c7fc, type: 3}
   oblong: {fileID: 3987655666912307642, guid: 5413b8ae844869d4e970dd968933ab0b, type: 3}
   square: {fileID: 2050520151396719447, guid: f4c213ca0b490bf46b1fde118ddeef5c, type: 3}
+  none: {fileID: 0}
   circleSprite: {fileID: 21300000, guid: 69c516f7e2a6e864ab28abbc006e5391, type: 3}
   oblongSprite: {fileID: 21300002, guid: 69c516f7e2a6e864ab28abbc006e5391, type: 3}
   squareSprite: {fileID: 21300004, guid: 69c516f7e2a6e864ab28abbc006e5391, type: 3}
+  brown: {r: 0.7830189, g: 0.44392902, b: 0.15143289, a: 1}
+  gold: {r: 0.9716981, g: 0.78076476, b: 0.3254272, a: 1}
+  white: {r: 0.8584906, g: 0.8382432, b: 0.8382432, a: 1}
+  grey: {r: 0.6603774, g: 0.63857245, b: 0.63857245, a: 1}
+  black: {r: 0.3018868, g: 0.28622285, b: 0.28622285, a: 1}
+  yellow: {r: 0.9528302, g: 0.9126597, b: 0.22022964, a: 1}
+  orange: {r: 0.9056604, g: 0.6358059, b: 0.21787111, a: 1}
+  red: {r: 0.7830189, g: 0.33012885, b: 0.16620687, a: 1}
+  pink: {r: 0.9528302, g: 0.57978815, b: 0.64453465, a: 1}
+  violet: {r: 0.56897384, g: 0.38229796, b: 0.6698113, a: 1}
+  blue: {r: 0.21493416, g: 0.50315017, b: 0.6603774, a: 1}
+  green: {r: 0.17661978, g: 0.5943396, b: 0.47709143, a: 1}
   earsPointed: {fileID: 21300000, guid: 8e8d57459e21d034aa08743808598015, type: 3}
   earsFolded: {fileID: 21300002, guid: 8e8d57459e21d034aa08743808598015, type: 3}
+  tailLong: {fileID: 21300000, guid: 95321093008694f4693131cdf48faa42, type: 3}
+  tailMedium: {fileID: 21300002, guid: 95321093008694f4693131cdf48faa42, type: 3}
+  tailShort: {fileID: 21300004, guid: 95321093008694f4693131cdf48faa42, type: 3}
+  tailLongStripped: {fileID: 21300000, guid: 6e38bcf65c2f3cf41b0d1b57dfdcb861, type: 3}
+  tailMediumStripped: {fileID: 21300002, guid: 6e38bcf65c2f3cf41b0d1b57dfdcb861, type: 3}
+  tailShortStripped: {fileID: 21300004, guid: 6e38bcf65c2f3cf41b0d1b57dfdcb861, type: 3}
