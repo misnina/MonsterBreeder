@@ -14,10 +14,12 @@ public class Display : MonoBehaviour
         //Type Display
         typesp = GetComponent<SpriteRenderer>();
         typesp.sprite = DisplayMaster.instance.typeDict[monster.Type];
+        typesp.color = DisplayMaster.instance.colorDict[monster.Color];
 
         //Ear Display
         earssp = this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
         earssp.sprite = DisplayMaster.instance.earDict[monster.Ears];
+        earssp.color = DisplayMaster.instance.colorDict[monster.EarsColor];
 
     }
 

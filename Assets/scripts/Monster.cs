@@ -11,6 +11,7 @@ public class Monster
     public string Color = "Brown";
     //Attributes
     public string Ears = "Pointed";
+    public string EarsColor = "Brown";
 
 
     public Monster Parent1;
@@ -31,9 +32,10 @@ public class Monster
         Parent2 = parent2;
     }
 
-    public void GetAttributes(string ears)
+    public void GetAttributes(string ears, string earsColor)
     {
         Ears = ears;
+        EarsColor = earsColor;
     }
 
 }

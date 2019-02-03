@@ -16,12 +16,12 @@ public class UseTesting : MonoBehaviour
     {
         monster1 = new Monster();
         monster1.GetMain("Cherry", "Square", 5, "Pink");
-        monster1.GetParents(new Monster(), new Monster());
-        monster1.GetAttributes("Pointed");
+        monster1.GetParents(monster1, new Monster());
+        monster1.GetAttributes("Pointed", "Pink");
         monster2 = new Monster();
         monster2.GetMain("Blueberry", "Oblong", 3, "Green");
-        monster2.GetParents(new Monster(), new Monster());
-        monster2.GetAttributes("Folded");
+        monster2.GetParents(monster2, new Monster());
+        monster2.GetAttributes("Folded", "Green");
 
 
     }

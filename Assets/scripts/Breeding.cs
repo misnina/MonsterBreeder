@@ -22,7 +22,7 @@ public class Breeding : MonoBehaviour
         Monster child = new Monster();
         child.GetParents(breeding1, breeding2);
         child.GetMain(monName, GetMonType(), GetHealth(), GetColor());
-        child.GetAttributes(GetEars());
+        child.GetAttributes(GetEars(), GetEarsColor());
 
         return child;
     }
@@ -72,6 +72,20 @@ public class Breeding : MonoBehaviour
             case 4: return breeding1.Parent2.Ears;
             case 5: return breeding2.Parent1.Ears;
             case 6: return breeding2.Parent1.Ears;
+            default: return "error";
+        }
+    }
+
+    private string GetEarsColor()
+    {
+        switch (Genetics())
+        {
+            case 1: return breeding1.EarsColor;
+            case 2: return breeding2.EarsColor;
+            case 3: return breeding1.Parent1.EarsColor;
+            case 4: return breeding1.Parent2.EarsColor;
+            case 5: return breeding2.Parent1.EarsColor;
+            case 6: return breeding2.Parent1.EarsColor;
             default: return "error";
         }
     }

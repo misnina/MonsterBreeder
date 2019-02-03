@@ -560,17 +560,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breeding1:
-    MonName: default
-    Type: circle
-    Health: 5
-    Color: brown
-    Ears: Pointed
+    MonName: 
+    Type: 
+    Health: 0
+    Color: 
+    Ears: 
+    EarsColor: Brown
   breeding2:
-    MonName: default
-    Type: circle
+    MonName: 
+    Type: 
     Health: 5
-    Color: brown
-    Ears: Pointed
+    Color: 
+    Ears: 
+    EarsColor: Brown
 --- !u!4 &1699963166
 Transform:
   m_ObjectHideFlags: 0

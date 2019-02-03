@@ -5,10 +5,11 @@ using UnityEngine;
 public class DisplayMaster : MonoBehaviour
 {
 
-   public static DisplayMaster instance;
-   public IDictionary<string, GameObject> prefabDict = new Dictionary<string, GameObject>();
-   public IDictionary<string, Sprite> typeDict = new Dictionary<string, Sprite>();
-   public IDictionary<string, Sprite> earDict = new Dictionary<string, Sprite>();
+    public static DisplayMaster instance;
+    public IDictionary<string, GameObject> prefabDict = new Dictionary<string, GameObject>();
+    public IDictionary<string, Sprite> typeDict = new Dictionary<string, Sprite>();
+    public IDictionary<string, Color> colorDict = new Dictionary<string, Color>();
+    public IDictionary<string, Sprite> earDict = new Dictionary<string, Sprite>();
 
     //Type Prefabs
     public GameObject circle;
@@ -39,6 +40,11 @@ public class DisplayMaster : MonoBehaviour
         typeDict.Add("Circle", circleSprite);
         typeDict.Add("Oblong", oblongSprite);
         typeDict.Add("Square", squareSprite);
+
+        //Color Dictionary Instance
+        colorDict.Add("Brown", new Color(166f / 255, 121f / 255, 13f / 255));
+        colorDict.Add("Pink", new Color(234f / 255, 160f / 255, 169f / 255));
+        colorDict.Add("Green", new Color(13f / 255, 174f / 255, 255f / 255));
 
         //Attributes Dictionary Instances
         //Ear Types
