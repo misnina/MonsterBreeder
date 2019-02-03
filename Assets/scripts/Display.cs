@@ -4,38 +4,21 @@ using UnityEngine;
 
 public class Display : MonoBehaviour
 {
-  
-    public Sprite Circle;
-    public Sprite Oblong;
-    public Sprite Square;
-
+ 
     public Monster monster;
+    private SpriteRenderer typesp;
+    private SpriteRenderer earssp;
 
-    private SpriteRenderer sp;
-
-    void Awake()
+    private void Start()
     {
-        sp = GetComponent<SpriteRenderer>();
-    }
+        //Type Display
+        typesp = GetComponent<SpriteRenderer>();
+        typesp.sprite = DisplayMaster.instance.typeDict[monster.Type];
 
-    void Update()
-    {
-        GetShape();
-    }
+        //Ear Display
+        earssp = this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        earssp.sprite = DisplayMaster.instance.earDict[monster.Ears];
 
-    private void GetShape()
-    {
-        if (monster.Type == "Circle")
-        {
-            sp.sprite = Circle;
-
-        } else if (monster.Type == "Oblong")
-        {
-            sp.sprite = Oblong;
-        } else if (monster.Type == "Square")
-        {
-            sp.sprite = Square;
-        }
     }
 
 }

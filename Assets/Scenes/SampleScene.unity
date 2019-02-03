@@ -239,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702655587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.02, z: 0}
+  m_LocalPosition: {x: -3, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -440,7 +440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51587e9007de46e438324469faedec2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 998562396063091762, guid: cd5a75bb4ca46f24e875af6deff3c7fc, type: 3}
   spawn: {fileID: 702655588}
 --- !u!212 &1524185170
 SpriteRenderer:
@@ -540,6 +539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1699963166}
   - component: {fileID: 1699963165}
+  - component: {fileID: 1699963167}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699963164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ead27dfe6914b3b4fbbd63f153194e50, type: 3}
+  m_Script: {fileID: 11500000, guid: 448d6c8aaebd1db4faf4c09c0bb5d862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   breeding1:
@@ -564,11 +564,13 @@ MonoBehaviour:
     Type: circle
     Health: 5
     Color: brown
+    Ears: Pointed
   breeding2:
     MonName: default
     Type: circle
     Health: 5
     Color: brown
+    Ears: Pointed
 --- !u!4 &1699963166
 Transform:
   m_ObjectHideFlags: 0
@@ -583,3 +585,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1699963167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699963164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c05d411100b5f48a87642578270cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circle: {fileID: 998562396063091762, guid: cd5a75bb4ca46f24e875af6deff3c7fc, type: 3}
+  oblong: {fileID: 3987655666912307642, guid: 5413b8ae844869d4e970dd968933ab0b, type: 3}
+  square: {fileID: 2050520151396719447, guid: f4c213ca0b490bf46b1fde118ddeef5c, type: 3}
+  circleSprite: {fileID: 21300000, guid: 69c516f7e2a6e864ab28abbc006e5391, type: 3}
+  oblongSprite: {fileID: 21300002, guid: 69c516f7e2a6e864ab28abbc006e5391, type: 3}
+  squareSprite: {fileID: 21300004, guid: 69c516f7e2a6e864ab28abbc006e5391, type: 3}
+  earsPointed: {fileID: 21300000, guid: 8e8d57459e21d034aa08743808598015, type: 3}
+  earsFolded: {fileID: 21300002, guid: 8e8d57459e21d034aa08743808598015, type: 3}

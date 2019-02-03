@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterBreeding : MonoBehaviour
+public class Breeding : MonoBehaviour
 {
-    public static MonsterBreeding instance;
+    public static Breeding instance;
     public Monster breeding1;
     public Monster breeding2;
 
@@ -21,11 +21,13 @@ public class MonsterBreeding : MonoBehaviour
 
         Monster child = new Monster();
         child.GetParents(breeding1, breeding2);
-        child.GetAttributes(monName, GetMonType(), GetHealth(), GetColor());
+        child.GetMain(monName, GetMonType(), GetHealth(), GetColor());
+        child.GetAttributes(GetEars());
 
         return child;
     }
 
+    //Main Characteristics
     private string GetMonType()
     {
         switch (Genetics())
@@ -59,13 +61,28 @@ public class MonsterBreeding : MonoBehaviour
         }
     }
 
+    //Attributes
+    private string GetEars()
+    {
+        switch (Genetics())
+        {
+            case 1: return breeding1.Ears;
+            case 2: return breeding2.Ears;
+            case 3: return breeding1.Parent1.Ears;
+            case 4: return breeding1.Parent2.Ears;
+            case 5: return breeding2.Parent1.Ears;
+            case 6: return breeding2.Parent1.Ears;
+            default: return "error";
+        }
+    }
+
     //50% split between parent's attributes, then 50% split between grandparent attributes
     private int Genetics()
     {
         {
             if (Random.value < 0.5f)
             {
-                if (Random.value < 0.5f)
+                if (Random.value < 0.75f)
                 {
                     return 1;
                 }
@@ -83,7 +100,7 @@ public class MonsterBreeding : MonoBehaviour
             }
             else
             {
-                if (Random.value < 0.5f)
+                if (Random.value < 0.75f)
                 {
                     return 2;
                 }
