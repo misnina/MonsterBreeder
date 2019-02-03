@@ -16,14 +16,20 @@ public class UseTesting : MonoBehaviour
 
     void Start()
     {
-        monster1 = new Monster("Apple", "Circle", 25, "green", " Circle", "Square", "pink", "green");
-        monster2 = new Monster("Pear", "Oblong", 20, "green", "Oblong", "Circle", "brown", "green");
+        monster1 = new Monster();
+        monster1.GetAttributes("Cherry", "Square", 5, "Pink");
+        monster1.GetParents(new Monster(), new Monster());
+        monster2 = new Monster();
+        monster2.GetAttributes("Blueberry", "Circle", 3, "Green");
+        monster2.GetParents(new Monster(), new Monster());
+
 
     }
 
     private void OnMouseDown()
     {
-        Monster monster3 = Breeding.instance.Breed("unnamed", monster1, monster2);
+        Monster monster3 = MonsterBreeding.instance.Breed("unnamed", monster1, monster2);
+
 
         int rand = Random.Range(0, names.Length);
         monster3.MonName = names[rand];

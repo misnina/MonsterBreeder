@@ -556,9 +556,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699963164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ebb5f46afcbb874681d13493f369a38, type: 3}
+  m_Script: {fileID: 11500000, guid: ead27dfe6914b3b4fbbd63f153194e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  breeding1:
+    MonName: default
+    Type: circle
+    Health: 5
+    Color: brown
+  breeding2:
+    MonName: default
+    Type: circle
+    Health: 5
+    Color: brown
 --- !u!4 &1699963166
 Transform:
   m_ObjectHideFlags: 0

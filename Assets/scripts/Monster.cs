@@ -2,30 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[System.Serializable]
 public class Monster
 {
-    public string MonName;
-    public string Type;
-    public int Health;
-    public string Color;
+    public string MonName = "default";
+    public string Type = "circle";
+    public int Health = 5;
+    public string Color = "brown";
 
-    public string Parent1Type;
-    public string Parent2Type;
-    public string Parent1Color;
-    public string Parent2Color;
+    public Monster Parent1;
+    public Monster Parent2;
 
-    public Monster(string monName, string type, int health, string color, string parent1Type, string parent2Type, string parent1Color, string parent2Color)
+    public void GetAttributes(string monName, string type, int health, string color)
     {
         MonName = monName;
         Type = type;
         Health = health;
         Color = color;
-        Parent1Type = parent1Type;
-        Parent2Type = parent2Type;
-        Parent1Color = parent1Color;
-        Parent2Color = parent2Color;
 
+    }
+
+    public void GetParents(Monster parent1, Monster parent2)
+    {
+        Parent1 = parent1;
+        Parent2 = parent2;
     }
 
 }
