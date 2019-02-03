@@ -22,7 +22,7 @@ public class Breeding : MonoBehaviour
         Monster child = new Monster();
         child.GetParents(breeding1, breeding2);
         child.GetMain(monName, GetMonType(), GetHealth(), GetColor());
-        child.GetAttributes(GetEars(), GetEarsColor());
+        child.GetAttributes(GetEars(), GetEarsColor(), GetTail(), GetTailColor(), GetTailDetail());
 
         return child;
     }
@@ -86,6 +86,48 @@ public class Breeding : MonoBehaviour
             case 4: return breeding1.Parent2.EarsColor;
             case 5: return breeding2.Parent1.EarsColor;
             case 6: return breeding2.Parent1.EarsColor;
+            default: return "error";
+        }
+    }
+
+    private string GetTail()
+    {
+        switch (Genetics())
+        {
+            case 1: return breeding1.Tail;
+            case 2: return breeding2.Tail;
+            case 3: return breeding1.Parent1.Tail;
+            case 4: return breeding1.Parent2.Tail;
+            case 5: return breeding2.Parent1.Tail;
+            case 6: return breeding2.Parent1.Tail;
+            default: return "error";
+        }
+    }
+
+    private string GetTailColor()
+    {
+        switch (Genetics())
+        {
+            case 1: return breeding1.TailColor;
+            case 2: return breeding2.TailColor;
+            case 3: return breeding1.Parent1.TailColor;
+            case 4: return breeding1.Parent2.TailColor;
+            case 5: return breeding2.Parent1.TailColor;
+            case 6: return breeding2.Parent1.TailColor;
+            default: return "error";
+        }
+    }
+
+    private string GetTailDetail ()
+    {
+        switch (Genetics())
+        {
+            case 1: return breeding1.TailDetail;
+            case 2: return breeding2.TailDetail;
+            case 3: return breeding1.Parent1.TailDetail;
+            case 4: return breeding1.Parent2.TailDetail;
+            case 5: return breeding2.Parent1.TailDetail;
+            case 6: return breeding2.Parent1.TailDetail;
             default: return "error";
         }
     }

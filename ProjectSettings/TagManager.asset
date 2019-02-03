@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ears
+    uniqueID: 2000947703
+    locked: 0
+  - name: Body
+    uniqueID: 1307198513
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

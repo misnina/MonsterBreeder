@@ -14,14 +14,18 @@ public class UseTesting : MonoBehaviour
 
     void Start()
     {
+        Monster shinyGrandparent = new Monster();
+        shinyGrandparent.GetMain("Shiny", "Square", 10, "Gold");
+        shinyGrandparent.GetAttributes("Folded", "Gold", "Long", "Gold", "Stripped");
+
         monster1 = new Monster();
         monster1.GetMain("Cherry", "Square", 5, "Pink");
-        monster1.GetParents(monster1, new Monster());
-        monster1.GetAttributes("Pointed", "Pink");
+        monster1.GetParents(monster1, shinyGrandparent);
+        monster1.GetAttributes("Pointed", "Pink", "Short", "Pink", "None");
         monster2 = new Monster();
         monster2.GetMain("Blueberry", "Oblong", 3, "Green");
         monster2.GetParents(monster2, new Monster());
-        monster2.GetAttributes("Folded", "Green");
+        monster2.GetAttributes("Folded", "Green", "Medium", "Blue", "Stripped");
 
 
     }
