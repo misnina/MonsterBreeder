@@ -7,8 +7,11 @@ public class Premade : MonoBehaviour
 
     public static Premade i;
 
+    public IDictionary<int, Monster> randMonsterDict = new Dictionary<int, Monster>();
     public Monster golden;
     public Monster brown;
+    public Monster pink;
+    public Monster aqua;
 
     private void Awake()
     {
@@ -19,6 +22,17 @@ public class Premade : MonoBehaviour
 
         brown = new Monster("Marco", "Square", 5, "Brown", "Pointed", "Brown", "Medium", "Brown", "None");
         brown.SetParents(brown, brown);
+
+        pink = new Monster("Cherry", "Square", 5, "Pink", "Pointed", "Pink", "Short", "Pink", "None");
+        pink.SetParents(pink, Premade.i.golden);
+
+        aqua = new Monster("Blueberry", "Oblong", 3, "Green", "Folded", "Green", "Medium", "Blue", "Stripped");
+        aqua.SetParents(aqua, Premade.i.brown);
+
+        randMonsterDict.Add(0, golden);
+        randMonsterDict.Add(1, brown);
+        randMonsterDict.Add(2, pink);
+        randMonsterDict.Add(3, aqua);
 
 
     }

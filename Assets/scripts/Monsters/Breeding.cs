@@ -20,11 +20,18 @@ public class Breeding : MonoBehaviour
         breeding1 = parent1;
         breeding2 = parent2;
 
-        child.SetParents(breeding1, breeding2);
-        child = new Monster(monName, GetMonType(), GetHealth(), GetColor(), GetEars(), GetEarsColor(), GetTail(), GetTailColor(), GetTailDetail());
+        if (!IsRelated())
+        {
+            child.SetParents(breeding1, breeding2);
+            child = new Monster(monName, GetMonType(), GetHealth(), GetColor(), GetEars(), GetEarsColor(), GetTail(), GetTailColor(), GetTailDetail());
 
-
-        return child;
+            return child;
+        }
+        else
+        {
+            Debug.Log("Can't breed. Monsters are too closely related!");
+            return null;
+        }
     }
 
     //Main Characteristics
@@ -172,6 +179,30 @@ public class Breeding : MonoBehaviour
             }
         }
  
+    }
+
+    private bool IsRelated()
+    {
+        if (breeding1.Parent1 == breeding2.Parent1)
+        {
+            return true;
+        }
+        else if (breeding1.Parent1 == breeding2.Parent2)
+        {
+            return true;
+        }
+        else if (breeding1.Parent2 == breeding2.Parent1)
+        {
+            return true;
+        } else if (breeding1.Parent2 == breeding2.Parent1)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+
+
     }
 
 }

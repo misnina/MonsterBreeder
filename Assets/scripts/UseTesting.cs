@@ -6,8 +6,6 @@ public class UseTesting : MonoBehaviour
 {
     public Transform spawn;
 
-    private Monster monster1;
-    private Monster monster2;
     private Vector2 startSpawn;
     public int spawnCount;
 
@@ -20,14 +18,7 @@ public class UseTesting : MonoBehaviour
     {
         instance = this;
         startSpawn = spawn.position;
-        monster1 = new Monster("Cherry", "Square", 5, "Pink", "Pointed", "Pink", "Short", "Pink", "None");
-        monster1.SetParents(monster1, Premade.i.golden);
-        
-        monster2 = new Monster("Blueberry", "Oblong", 3, "Green", "Folded", "Green", "Medium", "Blue", "Stripped");
-        monster2.SetParents(monster2, Premade.i.brown);
        
-
-
     }
 
     private void Update()
@@ -44,30 +35,31 @@ public class UseTesting : MonoBehaviour
     {
         if (spawn.position.y > -4.5f && spawnCount < 35)
         {
-            Monster monster3;
+            Monster monster3 = null;
 
-            if (GameManager.instance.selected02 == null)
+            if (GameManager.instance.selected01 == null &&GameManager.instance.selected02 == null)
             {
-                monster3 = Breeding.instance.Breed("unnamed", monster1, monster2);
+                monster3 = Breeding.instance.Breed("unnamed", Premade.i.randMonsterDict[Random.Range(0, Premade.i.randMonsterDict.Count)], Premade.i.randMonsterDict[Random.Range(0, Premade.i.randMonsterDict.Count)]);
             }
             else
             {
                 Monster gmMonster1 = GameManager.instance.selected01.transform.parent.GetComponent<Display>().monster;
                 Monster gmMonster2 = GameManager.instance.selected02.transform.parent.GetComponent<Display>().monster;
-                monster3 = Breeding.instance.Breed("unnamed", gmMonster1, gmMonster2);
+                  monster3 = Breeding.instance.Breed("unnamed", gmMonster1, gmMonster2);
+                
             }
            
+            if (monster3 != null)
+            {
+                int rand = Random.Range(0, names.Length);
+                monster3.MonName = names[rand];
 
-            int rand = Random.Range(0, names.Length);
-            monster3.MonName = names[rand];
-
-            Debug.Log("Name: " + monster3.MonName + ", Color: " + monster3.Color + ", Type: " + monster3.Type + ", Health: " + monster3.Health);
-
-            GameObject newMonster = Instantiate(DisplayMaster.instance.prefabDict[monster3.Type], spawn.position, Quaternion.identity);
-            spawnCount++;
-            MoveSpawnPos();
-            newMonster.GetComponent<Display>().monster = monster3;
-            newMonster.name = monster3.MonName;
+                GameObject newMonster = Instantiate(DisplayMaster.instance.prefabDict[monster3.Type], spawn.position, Quaternion.identity);
+                spawnCount++;
+                MoveSpawnPos();
+                newMonster.GetComponent<Display>().monster = monster3;
+                newMonster.name = monster3.MonName;
+            } 
 
         } else
         {

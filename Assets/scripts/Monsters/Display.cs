@@ -13,6 +13,11 @@ public class Display : MonoBehaviour
 
     private void Start()
     {
+        DisplaySprite();
+    }
+
+    public void DisplaySprite()
+    {
         //Type Display
         typesp = GetComponent<SpriteRenderer>();
         typesp.sprite = DisplayMaster.instance.typeDict[monster.Type];
@@ -33,7 +38,7 @@ public class Display : MonoBehaviour
         //Picks detail to display based on tail length
         switch (monster.TailDetail)
         {
-            case "Stripped": 
+            case "Stripped":
                 switch (monster.Tail)
                 {
                     case "Long":
