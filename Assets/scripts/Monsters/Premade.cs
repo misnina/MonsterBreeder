@@ -17,16 +17,16 @@ public class Premade : MonoBehaviour
     {
         i = this;
 
-        golden = new Monster("Shiny", "Circle", 10, "Gold", "Folded", "Gold", "Long", "Gold", "Stripped");
+        golden = new Monster(-1, "Shiny", "Circle", 10, "Gold", "Folded", "Gold", "Long", "Gold", "Stripped");
         golden.SetParents(golden, golden);
 
-        brown = new Monster("Marco", "Square", 5, "Brown", "Pointed", "Brown", "Medium", "Brown", "None");
+        brown = new Monster(-2, "Marco", "Square", 5, "Brown", "Pointed", "Brown", "Medium", "Brown", "None");
         brown.SetParents(brown, brown);
 
-        pink = new Monster("Cherry", "Square", 5, "Pink", "Pointed", "Pink", "Short", "Pink", "None");
+        pink = new Monster(-3, "Cherry", "Square", 5, "Pink", "Pointed", "Pink", "Short", "Pink", "None");
         pink.SetParents(pink, Premade.i.golden);
 
-        aqua = new Monster("Blueberry", "Oblong", 3, "Green", "Folded", "Green", "Medium", "Blue", "Stripped");
+        aqua = new Monster(-4, "Blueberry", "Oblong", 3, "Green", "Folded", "Green", "Medium", "Blue", "Stripped");
         aqua.SetParents(aqua, Premade.i.brown);
 
         randMonsterDict.Add(0, golden);

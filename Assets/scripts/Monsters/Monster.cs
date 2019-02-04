@@ -6,6 +6,7 @@ using UnityEngine;
 public class Monster
 {
     //Main
+    public int ID;
     public string MonName = "Alice";
     public string Type = "Circle";
     public int Health = 5;
@@ -22,8 +23,9 @@ public class Monster
     public Monster Parent1;
     public Monster Parent2;
 
-    public Monster(string monName, string type, int health, string color, string ears, string earsColor, string tail, string tailColor, string tailDetail)
+    public Monster(int id, string monName, string type, int health, string color, string ears, string earsColor, string tail, string tailColor, string tailDetail)
     {
+        ID = id;
         MonName = monName;
         Type = type;
         Health = health;

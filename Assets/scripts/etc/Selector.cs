@@ -18,8 +18,11 @@ public class Selector : MonoBehaviour
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(1)) {
-            Destroy(this.transform.parent.transform.gameObject);
+            //Delete monster object and set deactive in the dictionary
+            int ID = this.gameObject.transform.parent.GetComponent<Display>().monster.ID;
             UseTesting.instance.spawnCount--;
+            GameManager.instance.monsterDict[ID].Active = false;
+            Destroy(this.transform.parent.transform.gameObject);
         }
     }
 

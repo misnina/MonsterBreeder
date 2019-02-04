@@ -35,30 +35,30 @@ public class UseTesting : MonoBehaviour
     {
         if (spawn.position.y > -4.5f && spawnCount < 35)
         {
-            Monster monster3 = null;
+            Monster monster;
 
             if (GameManager.instance.selected01 == null &&GameManager.instance.selected02 == null)
             {
-                monster3 = Breeding.instance.Breed("unnamed", Premade.i.randMonsterDict[Random.Range(0, Premade.i.randMonsterDict.Count)], Premade.i.randMonsterDict[Random.Range(0, Premade.i.randMonsterDict.Count)]);
+                int rand1 = Random.Range(0, Premade.i.randMonsterDict.Count);
+                int rand2 = Random.Range(0, Premade.i.randMonsterDict.Count);
+                monster = Breeding.instance.Breed("unnamed", Premade.i.randMonsterDict[rand1], Premade.i.randMonsterDict[rand2]);
+
+                if (monster != null)
+                {
+                    CreateMonster(monster);
+                }
             }
             else
             {
                 Monster gmMonster1 = GameManager.instance.selected01.transform.parent.GetComponent<Display>().monster;
                 Monster gmMonster2 = GameManager.instance.selected02.transform.parent.GetComponent<Display>().monster;
-                  monster3 = Breeding.instance.Breed("unnamed", gmMonster1, gmMonster2);
-                
-            }
-           
-            if (monster3 != null)
-            {
-                int rand = Random.Range(0, names.Length);
-                monster3.MonName = names[rand];
+                monster = Breeding.instance.Breed("unnamed", gmMonster1, gmMonster2);
 
-                GameObject newMonster = Instantiate(DisplayMaster.instance.prefabDict[monster3.Type], spawn.position, Quaternion.identity);
-                spawnCount++;
-                MoveSpawnPos();
-                newMonster.GetComponent<Display>().monster = monster3;
-                newMonster.name = monster3.MonName;
+                if (monster != null)
+                {
+                    CreateMonster(monster);
+                }
+
             } 
 
         } else
@@ -82,5 +82,17 @@ public class UseTesting : MonoBehaviour
             spawn.position = new Vector2(-2f, spawn.position.y + -1);
 
         }
+    }
+
+    private void CreateMonster(Monster monster)
+    {
+        int rand = Random.Range(0, names.Length);
+        monster.MonName = names[rand];
+
+        GameObject newMonster = Instantiate(DisplayMaster.instance.prefabDict[monster.Type], spawn.position, Quaternion.identity);
+        spawnCount++;
+        MoveSpawnPos();
+        newMonster.GetComponent<Display>().monster = monster;
+        newMonster.name = monster.MonName;
     }
 }

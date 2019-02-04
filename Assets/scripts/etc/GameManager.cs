@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public Monster selectedParent0101, selectedParent0102, selectedParent0201, selectedParent0202;
     public GameObject selectedDisplay01, selectedDisplay02, selectedDisplay03, selectedDisplay04;
 
+    public IDictionary<int, MonsterInfo> monsterDict = new Dictionary<int, MonsterInfo>();
+    public int allMonsterCount;
+
     private void Awake()
     {
         instance = this;

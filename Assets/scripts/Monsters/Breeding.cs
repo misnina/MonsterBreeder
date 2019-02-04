@@ -22,9 +22,11 @@ public class Breeding : MonoBehaviour
 
         if (!IsRelated())
         {
+            int ID = GameManager.instance.allMonsterCount;
+            child = new Monster(ID, monName, GetMonType(), GetHealth(), GetColor(), GetEars(), GetEarsColor(), GetTail(), GetTailColor(), GetTailDetail());
             child.SetParents(breeding1, breeding2);
-            child = new Monster(monName, GetMonType(), GetHealth(), GetColor(), GetEars(), GetEarsColor(), GetTail(), GetTailColor(), GetTailDetail());
-
+            GameManager.instance.monsterDict.Add(ID, new MonsterInfo(ID, child, true));
+            GameManager.instance.allMonsterCount++;
             return child;
         }
         else
