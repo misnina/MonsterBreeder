@@ -45,7 +45,8 @@ public class UseTesting : MonoBehaviour
 
                 if (monster != null)
                 {
-                    CreateMonster(monster);
+                    MonsterTabDisplay.instance.RenderDisplayOrder();
+                    //CreateMonster(monster);
                 }
             }
             else

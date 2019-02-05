@@ -23,6 +23,7 @@ public class Selector : MonoBehaviour
             UseTesting.instance.spawnCount--;
             GameManager.instance.monsterDict[ID].Active = false;
             Destroy(this.transform.parent.transform.gameObject);
+            MonsterTabDisplay.instance.RenderDisplayOrder();
         }
     }
 
